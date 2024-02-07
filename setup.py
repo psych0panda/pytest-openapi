@@ -13,6 +13,6 @@ setup(
         'pytest',
         'requests',
         'responses',
-        'yaml'
+        'dotenv',
     ],
 )

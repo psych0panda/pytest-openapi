@@ -1,22 +1,36 @@
 import json
 import yaml
+import dotenv
 import pytest
 import requests
 import responses
+import logging
+
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.DEBUG)
 
 def pytest_addoption(parser):
     parser.addoption("--openapi-spec", action="store", help="Path to the OpenAPI spec file")
 
 def upload_fixture(file_path):
-    with open(file_path, 'r') as f:
-        data = yaml.safe_load(f)
-    return data
+    # with open(file_path, 'r') as f:
+    #     data = yaml.safe_load(f)
+    # return data
+    pass
 
 @pytest.fixture
 def path_parameters(yaml_fixture):
-    if not yaml_fixture:
-        yaml_fixture = upload_fixture('fixtures.yaml')
-    return upload_fixture(yaml_fixture)
+    # if yaml_fixture:
+    #     logger.debug(f"Upload yaml fixture: {yaml_fixture}")
+    #     fixture = upload_fixture(yaml_fixture)
+    # else:
+    #     logger.debug(f"Upload local .env fixture")
+    #     fixture = dotenv.dotenv_values(".env")
+    # return fixture
+    logger.debug(f"Upload local .env fixture")
+    fixture = dotenv.dotenv_values(".env")
+    return fixture
+    
 
 def pytest_generate_tests(metafunc):
     if 'openapi_test' in metafunc.fixturenames:
