@@ -1,0 +1,56 @@
+---
+download_data_ftp_download__ftp_server___get:
+  ftp_server: localhost
+upload_data_ftp_upload__ftp_server___get:
+  ftp_server: localhost
+create_bucket_gcs__bucket_name__put:
+  bucket_name: onedevbucket
+delete_bucket_gcs__bucket_name__delete:
+  bucket_name: onedevbucket
+buckets_list_gcs_buckets__project_id__get:
+  project_id: openapi-plugin
+upload_gcs_upload__bucket_name___source_file_name___destination_file_name__put:
+  bucket_name: onedevbucket
+  source_file_name: kitten.img
+  destination_file_name: puppy.img
+download_gcs_download__bucket_name___source_file_name___destination_file_name__get:
+  bucket_name: onedevbucket
+  source_file_name: kitten.img
+  destination_file_name: puppy.img
+head_gcs_head__bucket_name___focus_object__get:
+  bucket_name: onedevbucket
+  focus_object: puppy.img
+head_gcs_head__bucket_name___focus_object__head:
+  bucket_name: onedevbucket
+  focus_object: puppy.img
+delete_gcs_delete__bucket_name___focus_object__delete:
+  bucket_name: onedevbucket
+  focus_object: puppy.img
+list_bucket_gcs_list__bucket_name__get:
+  bucket_name: onedevbucket
+create_bucket_aws__bucket_name__put:
+  bucket_name: onedevbucket
+delete_bucket_aws__bucket_name__delete:
+  bucket_name: onedevbucket
+buckets_list_aws_buckets__project_id__get:
+  project_id: openapi-plugin
+upload_aws_upload__bucket_name___source_file_name___destination_file_name__put:
+  bucket_name: onedevbucket
+  source_file_name: kitten.img
+  destination_file_name: puppy.img
+download_aws_download__bucket_name___source_file_name___destination_file_name__get:
+  bucket_name: onedevbucket
+  source_file_name: kitten.img
+  destination_file_name: puppy.img
+head_aws_head__bucket_name___focus_object__get:
+  bucket_name: onedevbucket
+  focus_object: puppy.img
+head_aws_head__bucket_name___focus_object__head:
+  bucket_name: onedevbucket
+  focus_object: puppy.img
+delete_aws_delete__bucket_name___focus_object__delete:
+  bucket_name: onedevbucket
+  focus_object: puppy.img
+list_bucket_aws_list__bucket_name__get:
+  bucket_name: onedevbucket
+
